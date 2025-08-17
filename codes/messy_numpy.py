@@ -9,19 +9,11 @@ arr = np.random.rand(5) * 100  # Random array
 filtered = arr[arr>50] #filtering boolean indexing technique
 
 # 3. Any better method to calculate mean?
-total = 0
-for num in arr:
-    total += num
-mean_val = total / len(arr)
+mean_val=np.mean(arr) #numpy mean
 
 # 4. Three loops for matrix multiplication - that's definitely not optimal
 def matrix_mult(a, b):
-    result = [[0 for _ in range(len(b[0]))] for _ in range(len(a))]
-    for i in range(len(a)):
-        for j in range(len(b[0])):
-            for k in range(len(b)):
-                result[i][j] += a[i][k] * b[k][j]
-    return result
+    return np.dot(a,b) #numpy dot function
   
 # 5. Heard of multidimensional slicing?
 def get_submatrix(matrix, rows, cols):
